@@ -1,0 +1,45 @@
+
+.progress {
+  position: relative;
+  --progress: 0%; 
+  width: 300px;
+  height: 20px;
+  margin: 30px auto;
+  border: 1px solid #fff;
+  padding: 5px 10px;
+  box-shadow: 0 0 10px #aaaaaa;
+  border-radius: 10px;
+}
+
+.progress .bar {
+  width: var(--progress);
+  height: 100%;
+  background: linear-gradient(rgb(5, 55, 0), green , rgb(5, 55, 0));
+  background-repeat: repeat;
+  box-shadow: 0 0 10px 0px green;
+  animation: 
+    shine 4s ease-in infinite,
+    end 1s ease-out 1;
+}
+
+#text-progress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 5;
+}
+
+@property --progress {
+  syntax: "<length>";
+  initial-value: 0%;
+  inherits: true;
+}
+
+@keyframes shine {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 50px; }
+}

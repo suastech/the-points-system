@@ -1,0 +1,167 @@
+
+#user-form {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border: 1px solid blueviolet;
+  width: 80vw;
+  max-width: 550px;
+
+}
+
+.info-person {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info-person input, #date{
+  width: 180px;
+  height: 35px;
+  text-indent: 5px;
+  border: 1px solid grey ;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 0px 20px 10px 0px;
+  &:focus-visible {
+    outline: none;
+    border: rgb(98, 98, 251) solid 2px;
+  }
+}
+.info-person select {
+  width: 100px;
+}
+
+#user-form label {
+  font-size: 12px;
+  font-weight: 600;
+  margin: 5px;
+}
+
+.new-field {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-person label {
+  margin-left: 5px;
+}
+
+#user-form select {
+  height: 40px;
+  text-indent: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  &:focus-visible {
+    outline: none;
+    border: rgb(98, 98, 251) solid 2px;
+  }
+}
+
+.form-winner-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+#option1, #option2 {
+  height: 20px;
+}
+#user-form button {
+  height: 50px;
+  border-radius: 10px;
+  background-color: rgb(98, 98, 251);
+  border: none;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.full-box-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(48, 48, 48, 0.9);
+  display: flex;
+}
+
+.confirm {
+  background-color: rgb(237, 239, 255);
+  width: 50vw;
+  height: fit-content;
+  padding: 30px;
+  border-radius: 30px;
+  position: relative;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  outline: 4px double rgb(98, 98, 251);
+}
+.confirm h2 {
+  font-size: 20px;
+  line-height: 1.4;
+}
+.confirm h1 {
+  font-size: 28px;
+  margin: 0px;
+}
+
+.confirm button {
+  width: 150px;
+  height: 60px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(98, 98, 251);
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.confirmation-info-span {
+  color: grey;
+}
+
+
+.circular-loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.circular-loading {
+  width: 70px;
+  height: 70px;
+  border: 10px solid #ccc;
+  border-top-color: #4CAF50;
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
+}
+.circular-inner {
+  width: 60px;
+  height: 60px;
+  border: 5px solid transparent;
+  border-top-color: #4CAF50;
+  margin: 3px;
+  border-radius: 50%;
+  animation: rotate 0.5s linear infinite reverse;
+}
+.icon-share {
+  width: auto;
+  height: 30px;
+  margin: 0 20px;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
+}

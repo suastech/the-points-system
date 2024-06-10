@@ -1,0 +1,36 @@
+.person-info-column {
+display: flex;
+flex-direction: column;
+flex: 1;
+padding: 20px 20px;
+height: fit-content;
+}
+
+#results-picture-and-number {
+
+
+}
+.results-image-wrapper {
+  height: fit-content;
+  width: fit-content;
+  margin: 0px auto;
+}
+.results-image-wrapper img {
+  width: 70px;
+  height: 70px;
+}
+.person-info-column p {
+  font-size: 20px;
+  text-align: center;
+  margin: 10px 0px;
+}
+
+.message-container {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 800px) {
+
+
+
+}

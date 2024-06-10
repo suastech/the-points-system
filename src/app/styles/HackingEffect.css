@@ -1,0 +1,51 @@
+/* El estilo full-box-background está en la página de estilos de FormUser */
+.full-box-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(48, 48, 48, 0.9);
+  display: flex;
+}
+
+#hacking-effect {
+  background-color: black;
+  color: white;
+  width: 700px;
+  margin: auto;
+  padding: 20px 20px;
+  border-radius: 20px;
+  min-height: 510px;
+}
+
+#hacking-effect h3 {
+  text-align: center;
+  margin: 0;
+}
+
+#hacking-effect h4 {
+margin-bottom: 10px;
+}
+
+#hacking-effect p {
+  margin: 0;
+  color: green;
+  overflow-x: hidden;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.blink-effect {
+  animation: blink 1.4s infinite;
+}
+
+@media screen and (max-width: 800px) {
+  #hacking-effect {
+    width: 80%;
+  }
+}
