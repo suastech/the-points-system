@@ -4,7 +4,7 @@ const messages = {
       "**name**: The man, the myth, the legend... With an impressive score of **points**, **name** gives a new lesson to the world and an incalculable amount of joy to his partner.What more can be said about someone who turned the extraordinary into routine, the unattainable into everyday life?",
       ""],
     female: [
-      "**name**: The female, the myth, the legend... With an impressive score of **points**, **name** gives a new lesson to the world and an incalculable amount of joy to her partner.What more can be said about someone who turned the extraordinary into routine, the unattainable into everyday life?",
+      "**name**: The woman, the myth, the legend... With an impressive score of **points**, **name** gives a new lesson to the world and an incalculable amount of joy to her partner.What more can be said about someone who turned the extraordinary into routine, the unattainable into everyday life?",
       "",
       ""]
     },

@@ -1,10 +1,9 @@
 import styles from "./home.css";
 
-
 export default function Home() {
   return (
   
-  <div>
+  <div className="page-content">
     Hello
   </div>
 

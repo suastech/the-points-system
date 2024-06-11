@@ -5,7 +5,7 @@ h1, h2,h3, h4, h5, input, select, button, div {
 
 body {
   position: relative;
-  margin: 0;  
+  margin: 0; 
 }
 
 .page-content {
@@ -17,7 +17,6 @@ body {
 
 footer {  
   height: 100px;
-  background-color: rgb(0, 0, 0);
   display: flex;
 }
 

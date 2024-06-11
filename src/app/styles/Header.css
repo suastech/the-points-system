@@ -2,14 +2,17 @@
 header {
   display: flex;
   align-items: center;
-  background-color: black;
   padding: 20px 0;
+  background-color: black;
+
 }
 .header-title {
-  color: white;
+  
   font-size: 40px;
-  margin-left: 0px;
+  margin-left: -80px;
   background-color: none;
+  color: white;
+  z-index: 2;
 
 }
 
@@ -33,7 +36,7 @@ header {
   
 }
 
-.circle:after {
+/* .circle:after {
   content: "";
   position: absolute;
   top: 5px;
@@ -42,7 +45,7 @@ header {
   left: 5px;
   border-radius: 50%;
   background-color: black;
-}
+} */
 
 .circle span {
   color: white;
