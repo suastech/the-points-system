@@ -20,6 +20,46 @@
   margin: 0 auto;
 }
 
+.add-photos-space {
+  display: flex;
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  color: grey;
+  font-size: 16px;
+}
+.add-photo-item {
+  position: relative;
+
+}
+.custom-file-label { 
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.custom-file-label p {
+  margin: 0;
+  text-align: center;
+}
+
+.add-photo-image {
+  opacity: .7;
+  margin: 5px 0;
+}
+.remove-photo {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+
+
 #evaluate-information-screen select {
   border-radius: 10px;
   height: 40px;
@@ -37,12 +77,11 @@
   margin: 0px;
 }
 
-#evaluate-information-screen label {
-  display: block;
+.evaluate-information-label {
   width: 100%;
   color: grey;
   font-size: 18px;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 #evaluate-information-screen button {

@@ -7,6 +7,6 @@ export default function validateUrl(dataObject) {
       || (dataObject.status === null)
       || (dataObject.date[4] !== "-" || dataObject.date[7] !== "-" )
   )
-  return false
-  else return true
+        return false
+  else  return true
 }

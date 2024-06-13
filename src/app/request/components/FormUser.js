@@ -59,18 +59,10 @@ export default function FormUser() {
   }
 
   function generateLink() {
-    console.log(Object.keys(data))
     const dataString = Object.values(data).join('');
-    console.log(dataString)
     const encryptedData = CryptoJS.AES.encrypt(dataString, secret_key).toString();
     setRoute(encodeURIComponent(encryptedData));
-
-    setTimeout(
-      () => {
-        setIsLoading(false)
-      }
-      , 1000)
-
+    setTimeout(() => { setIsLoading(false) }, 1000)
   }
 
 return (
@@ -125,7 +117,7 @@ return (
             <div className="form-winner-box">
               <label>Person 2</label>
               <input type="radio" name="winner" id="option2" value={"2"} onChange={handleChange} required/>
-              </div>
+            </div>
           </div>
     </div>
 
@@ -173,6 +165,7 @@ return (
         <Link href={`/evaluate/${route}`}><h1 style={{ display: 'inline-block', verticalAlign: 'middle' }}>Check your results here!</h1></Link>
         <Image src={copy} alt="copy" className="icon-share" style={{ display: 'inline-block', verticalAlign: 'middle'}} />
         <h2>Share the link with your partner and those you want to see the evaluation.</h2>
+        <button onClick={ () => {setIsFinalScreen(false)}  }>Close</button>
       </div>
       }
 
