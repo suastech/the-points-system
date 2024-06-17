@@ -4,8 +4,10 @@ import ScoreNumberDisplay from "./ScoreNumberDisplay"
 import "../../styles/PersonColumn.css";
 
 export default function PersonColumn ({personName, myPoints, pointsOther, sex, image}) {
-  const genderMessage = sex === 1? "female" : "male"; 
-  const messageToShow = myPoints > pointsOther ? messages.winners[genderMessage][0] : messages.losers[genderMessage][0];
+  const genderMessage = sex === 1? "female" : "male";
+  const indexLoserMessage = Math.floor(Math.random() * messages.losers[genderMessage].length);
+  const indexWinnerMessage = Math.floor(Math.random() * messages.winners[genderMessage].length);
+  const messageToShow = myPoints > pointsOther ? messages.winners[genderMessage][indexWinnerMessage] : messages.losers[genderMessage][indexLoserMessage];
 
   function fixMessage (message, name, points) {
     message = message.replace(/\*\*name\*\*/g, name).replace(/\*\*points\*\*/g, points);

@@ -47,3 +47,14 @@
     left: 5px;
     background-color: white;
   }
+
+  @media screen and (max-width: 600px) {
+    .border-circle {
+      width: 85vw;
+      height: 85vw;
+    }
+    .inner-circle {
+      width: 85vw;
+      height: 85vw;
+    }
+  }

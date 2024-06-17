@@ -41,10 +41,14 @@
   height: fit-content;
 }
 
-#persons-info-space {
+.persons-info-space {
   flex: 3;
   display: flex;
   height: fit-content;
+}
+
+.reverse-persons {
+  flex-direction: row-reverse;
 }
 
 .graph-container {
@@ -78,11 +82,16 @@
     flex-direction: column-reverse;
   }
 
-  #persons-info-space {
+  .persons-info-space {
     flex: auto;
+    flex-direction: column;
+  }
+  
+  .reverse-persons {
+    flex-direction: column-reverse;
   }
 
-    #bar-graph {
+  #bar-graph {
     flex: auto;
     height: 600px;
     width: 70vw;
