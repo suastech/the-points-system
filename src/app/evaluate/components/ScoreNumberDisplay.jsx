@@ -19,9 +19,8 @@ const ScoreNumberDisplay = memo(({ myPoints }) => {
       setShowedNumber(myPoints);
     }
     return () => clearInterval(idInterval);
-  }, [showedNumber]);
-
-
+  }, [showedNumber, counter, myPoints]);
+  
   return <p>{showedNumber}</p>;
 });
 

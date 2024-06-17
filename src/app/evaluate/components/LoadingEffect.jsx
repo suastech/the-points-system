@@ -13,14 +13,14 @@ export default function LoadingEffect( {counterLimit} ) {
       setValue(prev => prev + 1);
     }, 100);
 
-  }, []);
+  }, [value]);
 
   return (
-    <div className="progress" style={{ "--progress": `${value}%` }}>
+    <div className="progress" style={{ "--progress": `${value<100? value: 100}%` }}>
       <div className="bar">
         <div className="progress-value"></div>
       </div>
-      <div id='text-progress'>{value}%</div>
+      <div id='text-progress'>{value<100? value: 100}%</div>
     </div>
   );
 }
