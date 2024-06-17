@@ -2,7 +2,7 @@
 .progress {
   position: relative;
   --progress: 0%; 
-  width: 300px;
+  width: 80%;
   height: 20px;
   margin: 30px auto;
   border: 1px solid #fff;

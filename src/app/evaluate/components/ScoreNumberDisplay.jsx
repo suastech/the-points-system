@@ -1,31 +1,34 @@
-import { memo } from 'react';
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState, useRef } from 'react';
 
 const ScoreNumberDisplay = memo(({ myPoints }) => {
-  const [showedNumber, setShowedNumber ] = useState(0);
-  const [counter, setCounter] = useState(0);
-  const limit = 20;
+  const [state, setState] = useState({ showedNumber: 0, counter: 0 });
+  const { showedNumber, counter } = state;
+  const limit = 10;
   const speedChange = 100;
+  const intervalRef = useRef(null);
 
   useEffect(() => {
-    setCounter ( prev => prev + 1);
-    let idInterval;
     if (counter < limit) {
-      idInterval = setInterval(() => {
-        const random = Math.floor(Math.random() * 10000) 
-        setShowedNumber(random);
+      intervalRef.current = setInterval(() => {
+        const random = Math.floor(Math.random() * 10000);
+        setState((prevState) => ({
+          showedNumber: random,
+          counter: prevState.counter + 1
+        }));
       }, speedChange);
     } else {
-      setShowedNumber(myPoints);
+      setState((prevState) => ({
+        ...prevState,
+        showedNumber: myPoints
+      }));
     }
-    return () => clearInterval(idInterval);
-  }, [showedNumber, counter, myPoints]);
-  
-  return <p>{showedNumber}</p>;
+
+    return () => clearInterval(intervalRef.current);
+  }, [counter, limit, speedChange, myPoints]);
+
+  return <p>{Math.round(showedNumber)}</p>;
 });
 
-
 ScoreNumberDisplay.displayName = 'NumberDisplay';
-
 
 export default ScoreNumberDisplay;

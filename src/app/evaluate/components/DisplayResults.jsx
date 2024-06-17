@@ -27,7 +27,7 @@ export default function DisplayResults( {dataObject, dataBar, dataLine, person1,
       <div id="bargraph-and-info">
         <BarGraph dataBar={dataBar} />
         <div className={`persons-info-space ${dataBar[0].value > dataBar[1].value ? "reverse-persons" : ""}`}>
-        <PersonColumn personName ={person1} sex={dataObject.sex1} myPoints = {dataBar[0].value} pointsOther = {dataBar[1].value} image={images.image1}/>
+          <PersonColumn personName ={person1} sex={dataObject.sex1} myPoints = {dataBar[0].value} pointsOther = {dataBar[1].value} image={images.image1}/>
           <PersonColumn personName ={person2} sex={dataObject.sex2} myPoints = {dataBar[1].value} pointsOther = {dataBar[0].value} image={images.image2}/>
         </div>
       </div>

@@ -3,24 +3,21 @@
 import { useEffect, useState } from "react";
 import { HACKING_PHRASES } from "../../../../generalParameters";
 import "../../styles/HackingEffect.css";
-import LoadingEffect from "./LoadingEffect";
+import "../../styles/LoadingEffect.css";
+
 
 export default function HackingEffect({ setIsLoading, setShowResults }) {
-  const numberOfLinesToShow = 30;
+  const numberOfLinesToShow = 25;
+  const speedChange = 100;
   const [codeLines, setCodeLines] = useState(Array(numberOfLinesToShow).fill(''));
   const [counter, setCounter] = useState(1);
-  const [speedChange, setSpeedChange] = useState([50, 500]);
   const [extension, setExtension] = useState([".jpg", ".mp3", "mpg"]);
-
   const numberStablePhrases = HACKING_PHRASES.length;
-  const ratioPhrasesToLines = 4;
+  const ratioPhrasesToLines = 10;
   const counterLimit = ratioPhrasesToLines * numberStablePhrases;
   const [indexHackingPhrase, setIndexHackingPhrase] = useState(0);
 
-  useEffect(() => {
-    const durationCriteria = Math.random();
-    const pauseDuration = durationCriteria < 0.95 ? speedChange[0] : speedChange[1];
-
+  useEffect(() => {    
     if (counter < counterLimit) {
       const timer = setTimeout(() => {
         if (counter % ratioPhrasesToLines === 0) {
@@ -40,30 +37,43 @@ export default function HackingEffect({ setIsLoading, setShowResults }) {
         let newArray = [newLine, ...codeLines];
         let final = newArray.slice(0, newArray.length - 1);
         setCodeLines(final);
-      }, pauseDuration);
+      }, speedChange);
 
       return () => clearTimeout(timer);
     } else {
       setIsLoading(false);
       setShowResults(true);
     }
-  }, [counter, counterLimit, ratioPhrasesToLines, setIndexHackingPhrase, setCounter, setIsLoading, setShowResults, speedChange, extension, codeLines]);
+  }, [counter, counterLimit, ratioPhrasesToLines, setIndexHackingPhrase, setCounter, setIsLoading, setShowResults, extension, codeLines]);
 
   return (
     <div className="full-box-background">
       <div id="hacking-effect">
         <h3>Getting your private information</h3>
+
         <div id="hacking-loading">
-          <LoadingEffect counterLimit={counterLimit} />
+          <div className="progress" style={{"--progress": `${Math.round((counter / counterLimit) * 100)}%`}}>
+            <div className="bar">
+              <div className="progress-value"></div>
+            </div>
+            <div id="text-progress">
+              {Math.round((counter / counterLimit) * 100)}%
+            </div>
+          </div>
         </div>
 
         <div id="stable-phrase">
-          <h4>{HACKING_PHRASES[indexHackingPhrase]}... <span className="blink-effect"> / </span> </h4>
+          <h4>
+            {HACKING_PHRASES[indexHackingPhrase]}...{" "}
+            <span className="blink-effect"> / </span>{" "}
+          </h4>
         </div>
 
         <div id="changing-lines">
           {codeLines.map((element, index) => (
-            <p className="hack-line" key={index}>{element}</p>
+            <p className="hack-line" key={index}>
+              {element}
+            </p>
           ))}
         </div>
       </div>
