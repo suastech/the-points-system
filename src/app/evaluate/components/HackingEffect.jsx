@@ -66,8 +66,8 @@ return (
     <div id="hacking-effect">
       <h3>Getting your private information</h3>
       <div id="hacking-loading">
-{/*         <LoadingEffect counterLimit={counterLimit}/>
- */}      </div>
+      <LoadingEffect counterLimit={counterLimit}/>
+      </div>
     
       <div id="stable-phrase" > 
         <h4>{HACKING_PHRASES[indexHackingPhrase]}...  <span className="blink-effect"> / </span> </h4>
