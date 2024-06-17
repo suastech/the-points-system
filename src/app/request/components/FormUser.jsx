@@ -6,6 +6,7 @@ import {STATUS_OPTIONS, VICTORY_LEVELS} from '../../../../generalParameters'
 import Image from 'next/image';
 import copy from "../../images/copy.png";
 import CryptoJS from "crypto-js";
+import Toast from "../../components/Toast";
 
 export default function FormUser() {
   const[ isConfirm, setIsConfirm] = useState(false);
@@ -13,9 +14,20 @@ export default function FormUser() {
   const [isLoading, setIsLoading] = useState(true);
   const [route, setRoute] = useState("");
   const limitDate = new Date().toISOString().split('T')[0];
+  const [isToaster, setIsToaster] = useState(false)
   
-  //const secret_key = process.env.NEXT_PUBLIC_SECRET_KEY;
-  const secret_key = "hola"
+  const secret_key = process.env.NEXT_PUBLIC_SECRET_KEY;
+
+  const handleCopy = () => {
+    const message = `/evaluate/${route}`;
+    navigator.clipboard.writeText(message)
+      .then(() => {
+        setIsToaster(true)
+      })
+      .catch((error) => {
+        alert('Unable to copy to clipboard. Please try again');
+      });
+  };
 
   const [data, setData] = useState({
         gap: "",
@@ -68,6 +80,8 @@ export default function FormUser() {
 return (
 <>
   <form id="user-form" onSubmit={handleSubmit}>
+    <h3 id="form-header">Let's create your tailored evaluation</h3>
+
     <div className="new-field">
       <label >Person 1</label>
       <div className="info-person">
@@ -108,7 +122,7 @@ return (
     </div>
 
     <div className="new-field ">
-        <label >Who will have the higher score? <spann style={{color: "red", opacity:"0.7"}}> (choose wisley) </spann></label>
+        <label >Who will get the higher score? <spann style={{color: "red", opacity:"0.7"}}> (choose wisely) </spann></label>
           <div style={{display:"flex", justifyContent:"space-around"}}>
             <div className="form-winner-box">
               <label>Person 1</label>
@@ -163,9 +177,11 @@ return (
       :
       <div>
         <Link href={`/evaluate/${route}`}><h1 style={{ display: 'inline-block', verticalAlign: 'middle' }}>Check your results here!</h1></Link>
-        <Image src={copy} alt="copy" className="icon-share" style={{ display: 'inline-block', verticalAlign: 'middle'}} />
+        <Image src={copy} alt="copy" className="icon-share" onClick={handleCopy}  style={{ display: 'inline-block', verticalAlign: 'middle'}} />
         <h2>Share the link with your partner and those you want to see the evaluation.</h2>
         <button onClick={ () => {setIsFinalScreen(false)}  }>Close</button>
+        {isToaster && <Toast message={"Link copied!"} turnOff={setIsToaster}/>}
+
       </div>
       }
 

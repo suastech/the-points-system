@@ -13,8 +13,11 @@ import validateUrl from "../components/validateUrl";
 import { useRouter } from 'next/navigation';
 import addImage from '../../images/add-image.png'
 import remove from '../../images/remove.png'
+import WelcomeText from "../components/WelcomeText";
+import CircleCard from "../components/CircleCard";
 
 export default function Evaluate({params}) {
+  const [isGoToInformation, setIsGoToInformation] = useState(true);
   const [isWelcome, setIsWelcome] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [showResults, setShowResults] = useState(false);
@@ -22,7 +25,7 @@ export default function Evaluate({params}) {
   const [dataLine, setDataLine] = useState([]);
   const [valueMenuPeriod, setValueMenuPeriod] = useState(0);
   const [images, setImages] = useState({ image1: null, image2: null });
-  const secret_key = "hola";
+  const secret_key = process.env.NEXT_PUBLIC_SECRET_KEY;
   const router = useRouter();  
   const urlInfo = decodeURIComponent(params.evaluateInfo);
   const [numPersons, setNumPersons]= useState([0,0]);
@@ -57,14 +60,17 @@ export default function Evaluate({params}) {
     setTimeout(() => { router.push('/')}, 2000);
     return (<div>Invalid link. Redirecting...</div>
     )};
+  
+  function handleInfoScreen() {
+    setIsGoToInformation(false);
+  }
 
   function activateResults() {
     const [newBarData, newLineData]  = dataChartGenerator(dataObject, valueMenuPeriod);
     setIsWelcome(false)
     setDataBar(newBarData);
     setDataLine(newLineData);
-    //setIsLoading(true); //Uncomment this line
-    setShowResults(true) //Erase this line
+    setIsLoading(true);
   }
 
   const handleImageChange = (e, person) => {
@@ -82,67 +88,62 @@ export default function Evaluate({params}) {
 
   return (
     <div className="page-content">
-
-      {isWelcome &&
-      <>
-        <div id="welcome-box-evluate">
-          <p>
-            The Points System generates an accurate assessment of the performance of the members of a relationship.
-            The results are accurate, indisputable, definitive, and science-based.
-          </p>
-        </div>
-
-        <div id="evaluate-information-screen">
-         <h4 style={{textAlign:"center", fontSize:"25px"}}>{`${dataObject.firstName1} ${dataObject.lastName1}`} & {`${dataObject.firstName2} ${dataObject.lastName2}`}</h4>
-        
-         <div className="add-photos-space">
-          {numPersons.map( (element, index) => {
-            return(
-            <div className="add-photo-item" key={index}>
-              <label htmlFor={`fileInput${index+1}`} className="custom-file-label">
-                <p>Add Photo</p>
-                <Image className="add-photo-image"
-                    src={images[`image${index+1}`] === null? addImage: URL.createObjectURL(images[`image${index+1}`])}
-                    alt="add-image"
-                    width={40}
-                    height={40}
-                />
-              </label>
-              <input
-                type="file"
-                id={`fileInput${index+1}`}
-                accept="image/*"
-                onChange={(e) => handleImageChange(e, `image${index+1}`)}
-                style={{ display: 'none' }}
-               />
-
-              {images[`image${index+1}`] !== null && 
-              <Image className="remove-photo"
-                     src={remove} alt="remove"
-                     title="Remove Photo"
-                     onClick={() => {
-                      removePhoto(index + 1);
-                    }}
-                     />
-              }
-
-            </div>
-            )
-            })
-          }
-
-         </div>
-
-         <label className="evaluate-information-label">In a relationship since:</label>
-         <h4>{dataObject.date}</h4>
-         <label className="evaluate-information-label">Status:</label>
-         <h4>{dataObject.status}</h4>
-         <label className="evaluate-information-label">Period to analyze:</label>
-         <PeriodMenu date={dataObject.date} setValueMenuPeriod={setValueMenuPeriod} />
-         <button onClick={activateResults}>See Result</button>
       
+      {isWelcome &&
+       <>
+        <CircleCard/>
+        <div className="welcome-screen">
+          {isGoToInformation ?
+            <WelcomeText handleInfoScreen={handleInfoScreen} name1={`${dataObject.firstName1} ${dataObject.lastName1}`}  name2={`${dataObject.firstName2} ${dataObject.lastName2}`} />
+            :
+            <div className="evaluate-information-screen">
+              <h4 style={{textAlign:"center", fontSize:"25px"}}>{`${dataObject.firstName1} ${dataObject.lastName1}`} & {`${dataObject.firstName2} ${dataObject.lastName2}`}</h4>
+              <div className="add-photos-space">
+                {numPersons.map( (element, index) => {
+                return(
+                <div className="add-photo-item" key={index}>
+                  <label htmlFor={`fileInput${index+1}`} className="custom-file-label">
+                    <p>Add Photo</p>
+                    <Image className="add-photo-image"
+                        src={images[`image${index+1}`] === null? addImage: URL.createObjectURL(images[`image${index+1}`])}
+                        alt="add-image"
+                        width={40}
+                        height={40}
+                    />
+                  </label>
+                  <input
+                    type="file"
+                    id={`fileInput${index+1}`}
+                    accept="image/*"
+                    onChange={(e) => handleImageChange(e, `image${index+1}`)}
+                    style={{ display: 'none' }}
+                  />
+
+                  {images[`image${index+1}`] !== null && 
+                  <Image className="remove-photo"
+                        src={remove} alt="remove"
+                        title="Remove Photo"
+                        onClick={() => {
+                          removePhoto(index + 1);
+                        }}
+                        />
+                  }
+                  </div>
+                   )
+                })
+                }
+              </div>
+              <label className="evaluate-information-label">Together since:</label>
+              <h4>{dataObject.date}</h4>
+              <label className="evaluate-information-label">Relationship Status:</label>
+              <h4>{dataObject.status}</h4>
+              <label className="evaluate-information-label">Period to analyze:</label>
+              <PeriodMenu date={dataObject.date} setValueMenuPeriod={setValueMenuPeriod} />
+              <button style={{marginTop:"20px"}} onClick={activateResults}>See Result</button>
+            </div>
+          }
         </div>
-      </>
+       </>
       }
 
       {isLoading && <HackingEffect setIsLoading={setIsLoading} setShowResults={setShowResults}/>}

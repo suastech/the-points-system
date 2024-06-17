@@ -1,0 +1,49 @@
+.border-circle {
+  margin: auto auto;
+  border-radius: 50%;
+  width: 510px;
+  height: 510px;
+  position: relative;
+  background: linear-gradient(#008944, #334bff);
+  animation: animate 5s linear infinite;
+  }
+
+.border-circle span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#008944, #33ccff );
+    border-radius: 50%;
+  }
+  
+  .border-circle span:nth-child(1) {
+    filter: blur(3px);
+  }
+  .border-circle span:nth-child(2) {
+    filter: blur(6px);
+  }
+  .border-circle span:nth-child(3) {
+    filter: blur(12px);
+  }
+  .border-circle span:nth-child(4) {
+    filter: blur(25px);
+  }
+
+@keyframes rotate {
+    from {
+    transform: rotate(0deg);
+    }
+    to {
+    transform: rotate(360deg);
+    } 
+  }
+
+  .inner-circle {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: white;
+  }

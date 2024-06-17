@@ -61,8 +61,8 @@ const LineGraph = ({dataLine, person1, person2}) => {
           <YAxis domain={yAxisDomain} />
          <Tooltip content={<CustomTooltip />} />
           <Legend />
-          <Line type="monotone" dataKey={person1} stroke="#3b82f6" dot={false}/>
-          <Line type="monotone" dataKey={person2} stroke="#8b5cf6" dot={false}/>
+          <Line type="monotone" dataKey={person1} stroke="#008944" dot={false}/>
+          <Line type="monotone" dataKey={person2} stroke="#334bff" dot={false}/>
         </LineChart>
       </ResponsiveContainer>
     </div>

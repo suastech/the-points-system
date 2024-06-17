@@ -13,8 +13,7 @@ import {
   LabelList,
 } from 'recharts';
 
-
-const barColors = ['#3b82f6', '#8b5cf6'];
+const barColors = ['#008944', '#334bff'];
 
 const BarGraph = ( {dataBar}) => {
   

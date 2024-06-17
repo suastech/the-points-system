@@ -7,7 +7,7 @@ export default function dataChartGenerator (dataObject, valueMenuPeriod) {
     [.4, .6],
     [.1, .2], // huge
   ];
-  const beginningWeekly = false;
+  let beginningWeekly = false;
   const bottomLimit = differenceRanges[dataObject.gap][0];
   const upperLimit = differenceRanges[dataObject.gap][1];
 
@@ -27,6 +27,9 @@ export default function dataChartGenerator (dataObject, valueMenuPeriod) {
       totalWinner = dayWinnerValue * 30;
       totalLoser =  dayLoserValue * 30;
       }
+    
+    totalWinner = Number(totalWinner.toFixed(2)); 
+    totalLoser =  Number(totalLoser.toFixed(2));
 
     return dataObject.winner === 1? [totalWinner, totalLoser] : [totalLoser, totalWinner] 
   }

@@ -6,17 +6,33 @@ h1, h2,h3, h4, h5, input, select, button, div {
 body {
   position: relative;
   margin: 0; 
+  background-color: black;
 }
 
 .page-content {
   position: relative;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
+  padding: 20px 0;
+}
+
+.generic-button {
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(31, 31, 31);
+  color: white;
+  padding: 10px 40px;
+  font-size: 18px;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+  }
+
 }
 
 footer {  
-  height: 100px;
+  height: 200px;
   display: flex;
 }
 

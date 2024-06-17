@@ -6,8 +6,7 @@ export default function requestEvaluation() {
 
 
 return (
-    <div className="page-content">
-        <h3>Please introduce your information and the expected result:</h3>
+    <div className="page-content" >
         <FormUser/>
     </div>
     )

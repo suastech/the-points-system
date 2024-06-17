@@ -1,7 +1,7 @@
 import {useState} from "react";
 
 export default function PeriodMenu({date, setValueMenuPeriod} ) {
-  const periodLabels = ["From the begginig of our relationship",
+  const periodLabels = ["From the beginnig",
                         "Last week",
                         "Last month",
                         "Last year" ]

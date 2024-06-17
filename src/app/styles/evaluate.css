@@ -1,24 +1,58 @@
-#welcome-box-evluate {
 
-
-}
-#welcome-box-evluate p {
+.welcome-screen {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); 
+  z-index: 3;
+  border-radius: 50%;
   font-size: 20px;
-  margin: 20px 50px;
-  text-align: center;
-  line-height: 1.5;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  background-color: rgb(223, 223, 223);
 }
 
-#evaluate-information-screen {
-  width: fit-content;
-  padding: 30px;
-  border-radius: 10px;
-  border: 3px double rgb(98, 98, 251);
+.text-space-welcome {
+  height: 90%;
+  width: 95%;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.text-space-welcome p {
+  margin: 0px 50px;
+  text-align: center;
+}
+
+.welcome-screen button {
+  border: none;
+  cursor: pointer;
+  padding: 15px 20px;
+  border-radius: 20px;
+  margin: 0px;
+  font-size: 15px;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  &:hover {
+    background-color: #003d1f;
+  }
+}
+
+.evaluate-information-screen {
+  width: 65%;
+  height: 80%;
   font-size: 20px;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto auto;
+
 }
+
 
 .add-photos-space {
   display: flex;
@@ -31,8 +65,8 @@
 }
 .add-photo-item {
   position: relative;
-
 }
+
 .custom-file-label { 
   cursor: pointer;
   display: flex;
@@ -58,12 +92,10 @@
   z-index: 2;
 }
 
-
-
-#evaluate-information-screen select {
+.evaluate-information-screen select {
   border-radius: 10px;
   height: 40px;
-  width: 350px;
+  width: 200px;
   margin-top: 5px;
   text-indent: 3px;
   font-size: 16px;
@@ -73,29 +105,21 @@
   }
 }
 
-#evaluate-information-screen h4 {
+.evaluate-information-screen h4 {
   margin: 0px;
+  overflow-wrap: normal;
 }
 
 .evaluate-information-label {
-  width: 100%;
   color: grey;
   font-size: 18px;
   margin-top: 15px;
 }
 
-#evaluate-information-screen button {
-  padding: 10px 20px;
-  border-radius: 10px;
-  background-color: rgb(98, 98, 251);
-  border: none;
-  font-size: 20px;
-  color: white;
-  cursor: pointer;
-  margin: 20px auto 0px auto;
-  &:hover {
-    transform: scale(1.03);
-    background-color: rgb(128, 128, 249);
+
+
+@media screen and (max-width: 600px) {
+  .evaluate-information-screen {
+    width: 80vw;
   }
 }
-

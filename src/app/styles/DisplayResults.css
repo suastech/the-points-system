@@ -25,53 +25,29 @@
   }
 }
 
-#results-buttons button img {
-  height: 15px;
-  width: auto;
-}
-
-.remove-option {
-  
-}
-
 #presentation-results {
   display: flex;
   flex-direction: column;
   width: 80%;
   border-radius: 20px;
-  background-color: rgb(245, 245, 245);
-
+  background-color: rgb(227, 227, 227);
+  padding: 20px 30px;
   margin: 0 auto 0 auto;
-}
-
-#results-initial-info {
-  padding: 20px 20px;
-}
-#results-initial-info h1 {
-  font-size: 40px;
-  margin: 0px 0px 10px 0px;
-}
-
-#results-initial-info > div {
-  font-size: 20px;
-  line-height: 1.3;
-  margin: 5px 0;
+  position: relative;
 }
 
 #bargraph-and-info {
   display: flex;
   height: fit-content;
-
 }
 
 #persons-info-space {
-  flex: 2;
+  flex: 3;
   display: flex;
   height: fit-content;
 }
 
 .graph-container {
-  background-color: rgb(226, 226, 226);
   font-size: 12px;
   padding: 10px 0;
 }
@@ -79,7 +55,7 @@
 #bar-graph {
   padding-right: 10px;
   flex: 1;
-  min-height: 600px;
+  min-height: 400px;
 }
 
 #line-graph {

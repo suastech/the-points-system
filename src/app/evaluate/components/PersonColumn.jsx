@@ -4,7 +4,6 @@ import ScoreNumberDisplay from "./ScoreNumberDisplay"
 import "../../styles/PersonColumn.css";
 
 export default function PersonColumn ({personName, myPoints, pointsOther, sex, image}) {
-  console.log(personName, sex)
   const genderMessage = sex === 1? "female" : "male"; 
   const messageToShow = myPoints > pointsOther ? messages.winners[genderMessage][0] : messages.losers[genderMessage][0];
 
@@ -20,7 +19,7 @@ return (
           {image?
             <Image src={URL.createObjectURL(image)} width={60} height={60} alt="user-image"/>
             :
-            <div>{personName}</div>
+            <div style={{fontSize:"20px"}}>{personName}</div>
           }
         </div>
         <ScoreNumberDisplay myPoints={myPoints}/>

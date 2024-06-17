@@ -5,12 +5,14 @@
   border-radius: 10px;
   margin: 0 auto;
   padding: 10px 20px;
-  border: 1px solid blueviolet;
   width: 80vw;
   max-width: 550px;
   background-color: rgb(243, 243, 243);
-  color: black;
+}
 
+#form-header {
+  font-size: 18px;
+  margin: 10px 0;
 }
 
 .info-person {
@@ -25,7 +27,7 @@
   border: 1px solid grey ;
   font-size: 16px;
   border-radius: 5px;
-  margin: 0px 20px 10px 0px;
+  margin: 0px 10px 0px 0px;
   &:focus-visible {
     outline: none;
     border: rgb(98, 98, 251) solid 2px;
@@ -33,16 +35,17 @@
 }
 .info-person select {
   width: 100px;
+
 }
 
 #user-form label {
   font-size: 12px;
   font-weight: 600;
-  margin: 5px;
+  margin: 10px 0 0 0;
 }
 
 .new-field {
-  margin: 10px 0;
+  margin: 5px 0;
   display: flex;
   flex-direction: column;
 }
@@ -65,15 +68,16 @@
 .form-winner-box {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
 }
 #option1, #option2 {
   height: 20px;
 }
+
 #user-form button {
   height: 50px;
   border-radius: 10px;
-  background-color: rgb(98, 98, 251);
+  /* background-color: rgb(98, 98, 251); */
+  background-color: #334bff;
   border: none;
   font-size: 25px;
   color: white;
