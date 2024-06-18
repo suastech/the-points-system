@@ -28,20 +28,15 @@ export const VICTORY_LEVELS = [
   ];
 
 export const HACKING_PHRASES = [
-    `Accessing your Whatsapp`,
+    "Accessing your Whatsapp",
     "Hacking Facebook",
-    "Hacking the information Instagram said they woulnd't sell but they did",
-    "Hacking your browser's history",
-    "Hacking your browser's incognito mode",
+    "Hacking Instagram",
     "Accessing your phone",
     "Accessing your camera",
-    "Hacking your ex's data",
     "Hacking CIA",
     "Hacking KGB",
-    "Hacking Interpol",
-    "Hacking your Government's data",
-    "Hacking your Tax's Office",
-    "Hacking NASA",
+    "Hacking your Government",
     "Hacking China",
-    "Hacking your friend's phones"
+    "Hacking your friend's phones",
+    "Reading messages with your ex",
   ]

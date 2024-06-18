@@ -1,3 +1,7 @@
+html {
+  padding: 0;
+  margin: 0;
+}
 
 h1, h2,h3, h4, h5, input, select, button, div {
   font-family:monospace
@@ -5,7 +9,8 @@ h1, h2,h3, h4, h5, input, select, button, div {
 
 body {
   position: relative;
-  margin: 0; 
+  margin: 0;
+  padding: 0;
   background-color: black;
 }
 
@@ -38,6 +43,5 @@ footer {
 
 footer p {
   color: white;
-  margin: auto auto;
 }
 

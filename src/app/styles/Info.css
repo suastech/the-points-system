@@ -29,3 +29,11 @@
   margin: 15px 10px;
   line-height: 1.4;
 }
+
+@media screen and (max-width: 600px) {
+  #info-container {
+    width: 75vw;
+    margin: 30px 0 0 20px;
+  }
+  
+}
