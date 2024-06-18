@@ -53,8 +53,7 @@ export default function HackingEffect({ setIsLoading, setShowResults }) {
 
         <div id="hacking-loading">
           <div className="progress" style={{"--progress": `${Math.round((counter / counterLimit) * 100)}%`}}>
-            <div className="bar">
-              <div className="progress-value"></div>
+            <div className="bar" style={{ width: `${Math.round((counter / counterLimit) * 100)}%` }}>
             </div>
             <div id="text-progress">
               {Math.round((counter / counterLimit) * 100)}%
