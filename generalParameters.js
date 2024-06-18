@@ -13,7 +13,7 @@ export const STATUS_OPTIONS= [
     "Monogamous relationship with compliance inconsistencies",
     "Undefined",
     "Unclear",
-    "Poliamorous",
+    "Polyamorous",
     "Affaire",
     "Toxic relationship",
     "Trying for the tenth time",

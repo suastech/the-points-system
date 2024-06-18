@@ -18,8 +18,8 @@ return (
     
     <ol>
       <li>Click on Request Evaluation.</li>
-      <li>Enter your information and specify who will get a higher score.</li>
-      <li>Copy and share with your partner the link where the customized results will be waiting for you.</li>
+      <li>Enter your and your partner´s information.</li>
+      <li>Copy and share the link where a customized result will be waiting for you.</li>
     </ol>
     <Link href={"/request"}>
         <div style={{display:"block", margin:"0 auto", width:"fit-content"}} >

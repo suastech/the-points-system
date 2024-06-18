@@ -4,7 +4,6 @@ import "../../styles/ResultsHeader.css"
 export default function ResultsHeader({dataObject, period, valueMenuPeriod}) {
 
   return ( 
-
     <div id="results-initial-info">
       <div className="results-header">
         <h1>Certificate</h1> <div>The Points System</div>
