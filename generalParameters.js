@@ -40,3 +40,7 @@ export const HACKING_PHRASES = [
     "Hacking your friend's phones",
     "Reading messages with your ex",
   ]
+
+  export const PROJECT_BASICS = {
+    url: "https://the-points-system.netlify.app"
+  }

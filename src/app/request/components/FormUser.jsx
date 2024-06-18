@@ -2,7 +2,7 @@
 import { useState } from "react";
 import '../../styles/FormUser.css'
 import Link from "next/link";
-import {STATUS_OPTIONS, VICTORY_LEVELS} from '../../../../generalParameters'
+import {PROJECT_BASICS, STATUS_OPTIONS, VICTORY_LEVELS} from '../../../../generalParameters'
 import Image from 'next/image';
 import copy from "../../images/copy.png";
 import CryptoJS from "crypto-js";
@@ -19,7 +19,7 @@ export default function FormUser() {
   const secret_key = process.env.NEXT_PUBLIC_SECRET_KEY;
 
   const handleCopy = () => {
-    const message = `/evaluate/${route}`;
+    const message = `${PROJECT_BASICS.url}/evaluate/${route}`;
     navigator.clipboard.writeText(message)
       .then(() => {
         setIsToaster(true)
