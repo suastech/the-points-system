@@ -85,16 +85,6 @@
   margin-top: 10px;
 }
 
-.full-box-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(48, 48, 48, 0.9);
-  display: flex;
-}
-
 .confirm {
   background-color: rgb(237, 239, 255);
   width: 50vw;
@@ -170,4 +160,15 @@
 
 @keyframes rotate {
   100% { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 600px) {
+  .confirm {
+    width: 75vw;
+  }
+  .confirm button {
+    width: 100px;
+    font-size: 12px;
+    height: 50px;
+  }
 }
